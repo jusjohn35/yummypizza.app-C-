@@ -207,10 +207,10 @@ int main() {
         cout << "Enter choice (1-4): ";
         
         int choice = getIntInput(1, 4);
-        
+        //replaced pizza with auto
         switch (choice) {
             case 1: {
-                Pizza pizza = createPizza();
+                auto pizza = createPizza();
                 order.addPizza(pizza);
                 cout << "\n✓ Pizza added to order!" << endl;
                 break;
