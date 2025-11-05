@@ -1,0 +1,34 @@
+/**
+ * @brief Entry point for the Pizza Palace command-line ordering application.
+ *
+ * This interactive main function drives a simple pizza ordering workflow:
+ *  - Greets the user and prompts for customer information (name and delivery address).
+ *  - Presents a main menu loop with options to:
+ *      1) Add a pizza to the current order (delegates creation to createPizza()).
+ *      2) View the current order summary and total price.
+ *      3) Complete the order and checkout (displays a receipt via Order::displayReceipt()).
+ *      4) Cancel the order and exit.
+ *  - Reads menu choices using getIntInput(min=1, max=4) to validate numeric input.
+ *  - Ensures the order is not empty before allowing checkout.
+ *
+ * Dependencies:
+ *  - Order and Pizza types with methods: setCustomerInfo(), addPizza(), isEmpty(), calculateTotal(), displayReceipt().
+ *  - Helper functions: getIntInput(int min, int max), createPizza().
+ *  - Uses std::cin/std::cout for user interaction and iomanip for formatted totals.
+ *
+ * Behavior and return values:
+ *  - Returns 0 on normal termination (checkout completed or order cancelled).
+ *  - The process may exit early when checkout or cancellation is chosen.
+ *
+ * Preconditions:
+ *  - Standard input/output are available and the helper functions/types are implemented and linked.
+ *
+ * Postconditions:
+ *  - On successful checkout, the receipt is displayed to the user.
+ *  - On cancellation, no persistent order data is produced by this function.
+ *
+ * Notes:
+ *  - This function is single-threaded and not designed for concurrent use.
+ *  - Input validation for menu selection is delegated to getIntInput; additional validation for pizza creation
+ *    should be handled inside createPizza() and related classes.
+ */
